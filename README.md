@@ -1,5 +1,5 @@
 
-## Projeto desafio code Group
+# Projeto desafio code Group
 
 Para execução local,
 Na pasta raiz do projeto, tendo o docker compose instalado 
@@ -13,7 +13,7 @@ docker compose run php php artisan db:seed
 ```
 
 
-# Lista de endpoints: 
+## Lista de endpoints: 
 
 ## Jogadores:
 
