@@ -85,7 +85,7 @@ Obter jogadores por Id do time
 - GET http://localhost/api/team/{id}/players
 
 
-**Sorteio e distribuição de jogadores em três times sendo que o terceiro time são de jogadores que restaram após escolha**
+**Sorteio e distribuição de jogadores em três times sendo que o terceiro time são de jogadores que restaram após escolha (sem persistir no banco)**
 - GET http://localhost/api/event/drawteams/teamplayers/{playersByTeam}/event/{eventId}
 
 Listar jogadores com presença confirmada no evento (jogo):
