@@ -71,8 +71,8 @@ Obter jogadores por Id do time
 - PUT http://localhost/api/event/{id}
 - DELETE http://localhost/api/event/{id}
 
-Persistir dados do sorteio de um jogo no banco de dados
-http://localhost/api/team/players
+**Persistir dados do sorteio de um jogo no banco de dados**
+-POST http://localhost/api/team/players
 
 ```json
 {
