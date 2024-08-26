@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
+use App\Models\Player;
 
 class DatabaseSeeder extends Seeder
 {
@@ -221,5 +222,6 @@ class DatabaseSeeder extends Seeder
         ];
 
         DB::table('event_days')->insert($event);
+        
     }
 }
