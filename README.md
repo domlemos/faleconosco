@@ -13,7 +13,7 @@ docker compose run php php artisan db:seed
 ```
 
 
-## Lista de endpoints: 
+# Lista de endpoints: 
 
 ## Jogadores:
 
@@ -85,18 +85,23 @@ Obter jogadores por Id do time
 - GET http://localhost/api/team/{id}/players
 
 
-#Sorteio e distribuição de jogadores em três times sendo que o terceiro time são de jogadores que restaram após escolha
+**Sorteio e distribuição de jogadores em três times sendo que o terceiro time são de jogadores que restaram após escolha**
 - GET http://localhost/api/event/drawteams/teamplayers/{playersByTeam}/event/{eventId}
 
-Listar jogadores com presença confirmada:
-- GET http://localhost/api/event/1/players
+Listar jogadores com presença confirmada no evento (jogo):
+- GET http://localhost/api/event/{eventId}/players
 
-Confirmar presença de jogador:
-- POST http://localhost/api/event/1/presence/confirm
+Confirmar presença de jogador: (Um ou mais ids de jogadores no array)
+- POST http://localhost/api/event/{eventId}/presence/confirm
+```json
+[1]
+```
 
-Cancelar presença de jogador:
-- POST http://localhost/api/event/1/presence/cancel
-
+Cancelar presença de jogador: (Um ou mais ids de jogadores no array)
+- POST http://localhost/api/event/{eventId}/presence/cancel
+```json
+[1]
+```
 
 ## Observações
 
