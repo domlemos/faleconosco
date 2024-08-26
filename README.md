@@ -24,10 +24,10 @@ docker compose run php php artisan db:seed
 
 ```json
 {
-	"name": "Aguinaga",
+    "name": "Aguinaga",
     "email": "aguinaga@futebol.com",
     "rating": "3",
-	"goalkeeper": false
+    "goalkeeper": false
 }
 ```
 
