@@ -32,8 +32,8 @@ docker compose run php php artisan db:seed
 ```
 
 
-PUT http://localhost/api/player/{id}
-DELETE http://localhost/api/player/{id}
+- PUT http://localhost/api/player/{id}
+- DELETE http://localhost/api/player/{id}
 
 ## Times:
 
