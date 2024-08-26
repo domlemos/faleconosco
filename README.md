@@ -15,7 +15,7 @@ docker compose run php php artisan db:seed
 
 ## Lista de endpoints: 
 
-# Jogadores:
+## Jogadores:
 
 - GET http://localhost/api/player/all
 - GET http://localhost/api/player/{id}
@@ -35,7 +35,7 @@ docker compose run php php artisan db:seed
 PUT http://localhost/api/player/{id}
 DELETE http://localhost/api/player/{id}
 
-# Times:
+## Times:
 
 - GET http://localhost/api/team/all
 - GET http://localhost/api/team/{id}
@@ -56,7 +56,7 @@ http://localhost/api/team/players
 Obter jogadores por Id do time
 - GET http://localhost/api/team/{id}/players
 
-# Evento (Jogo):
+## Evento (Jogo):
 
 - GET http://localhost/api/event/all
 - GET http://localhost/api/event/{id}
