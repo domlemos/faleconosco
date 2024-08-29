@@ -6,7 +6,6 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
-use App\Models\Player;
 
 class DatabaseSeeder extends Seeder
 {
