@@ -14,10 +14,13 @@ class Player extends Model
     protected $table = 'players';
 
     protected $fillable = [
+        'id',
         'name',
         'email',
         'rating',
         'goalkeeper',
+        'created_at',
+        'deleted_at'
     ];
 
     protected $dates = ['deleted_at', 'created_at', 'updated_at'];
