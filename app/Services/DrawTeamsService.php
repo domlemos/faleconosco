@@ -39,7 +39,7 @@ class DrawTeamsService
         return $this->filteredTeams($matchPlayers, $playersByTeam);
     }
 
-    private function filteredTeams($matchPlayers, $playersByTeam): array
+    public function filteredTeams($matchPlayers, $playersByTeam): array
     { 
         
         if ($playersByTeam > 6) {
@@ -54,7 +54,7 @@ class DrawTeamsService
         $collections = [];
         if($chunk > 3) $chunk = 3;
 
-        for ($i = 0; $i < $chunk; $i++) {            
+        for ($i = 0; $i < $chunk; $i++) {
             $collections[] = collect();
         }
         
