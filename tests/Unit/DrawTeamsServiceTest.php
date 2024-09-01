@@ -68,22 +68,11 @@ class DrawTeamsServiceTest extends TestCase
         $this->expectException(InsufficientNumberOfPlayersException::class);
 
         $playersByTeam = 5;
-        $eventId = 1;
-        $matchPlayers = new Collection(array_fill(0, 5, 
-        [ 
-            "id" => 24, 
-            "goalkeeper" => 1, 
-            "email" => "justfontaine@futebol.com", 
-            "name" => "Fontaine", 
-            "rating" => 2, 
-            "created_at" => "2024-08-26T01:59:47.000000Z", 
-            "updated_at" => "2024-08-26T01:59:47.000000Z", 
-            "deleted_at" => null
-        ]));
+        $eventId = 1;        
 
         $this->eventDayRepository->method('findPlayersByEventId')
             ->with($eventId)
-            ->willReturn($matchPlayers);
+            ->willReturn($this->exceptionPlayers);
 
         $this->drawTeamsService->drawTeams($playersByTeam, $eventId);
     }
