@@ -7,3 +7,4 @@ $user = User::factory()->create([
 ]);
 $user = User::factory()->create()
 $user = User::factory()->create()
+Hash::make('123456')
