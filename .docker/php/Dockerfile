@@ -17,3 +17,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN a2enmod rewrite
 
+WORKDIR /var/www/html
+
+VOLUME /var/www/html
+
+USER www-data

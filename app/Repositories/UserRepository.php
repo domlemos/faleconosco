@@ -7,12 +7,12 @@ use App\Repositories\Interfaces\PlayerRepositoryInterface;
 use Exception;
 use Illuminate\Support\Collection;
 
-class PlayerRepository implements PlayerRepositoryInterface
+class UserRepository implements PlayerRepositoryInterface
 {
     public function __construct(private Player $model)
     {
-        
-    }    
+
+    }
 
     public function getAll(): Collection
     {
@@ -20,7 +20,7 @@ class PlayerRepository implements PlayerRepositoryInterface
     }
 
     public function create(array $data): void
-    {   
+    {
         $this->model->create($data);
     }
 
@@ -44,8 +44,8 @@ class PlayerRepository implements PlayerRepositoryInterface
 
     public function delete($id): void
     {
-        $player = $this->find($id);        
+        $player = $this->find($id);
 
         $player->delete();
-    }    
+    }
 }

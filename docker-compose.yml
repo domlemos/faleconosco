@@ -1,35 +1,31 @@
 services:
-  db:    
+  db:
     image: mysql:5.7
-    container_name: rachao-database
-    restart: unless-stopped
-    environment:      
-      MYSQL_USER: "rachao"
-      MYSQL_PASSWORD: "secret"
-      MYSQL_ROOT_PASSWORD: "secret"
+    environment:
+       MYSQL_ROOT_PASSWORD: secret
+       MYSQL_DATABASE: faleconosco
     ports:
-      - "3306:3306"
+       - "3306:3306"
     volumes:
       - .data:/var/lib/mysql
     networks:
       - app-network
   php:
-    user: 1000:1000
+    user: 1002:1000
     build:
       args:
         user: teste
-        uid: 1000
       context: .docker/php
-      dockerfile: Dockerfile  
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     volumes:
-      - .:/var/www/html
+      - ./:/var/www/html
       - .docker/apache/sites-available:/etc/apache2/sites-enabled
     depends_on:
       - db
     networks:
-      - app-network  
+      - app-network
 networks:
   app-network:
     name: app-network

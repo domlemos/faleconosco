@@ -1,0 +1,9 @@
+use Database\Factories
+use Database\Factories\UserFactory
+ls
+use App\Model\User
+$user = User::factory()->create([
+    'email' => 'teste@teste.com',
+]);
+$user = User::factory()->create()
+$user = User::factory()->create()
