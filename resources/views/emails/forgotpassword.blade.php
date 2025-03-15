@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Recuperação de senha</h1>
-    {{ $token }} <br>
+        <a href="http://localhost/reset-password-form/{{ $email }}/{{ $token }}">Atualizar Senha</a>
 </body>
 </html>

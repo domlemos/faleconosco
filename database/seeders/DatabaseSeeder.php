@@ -20,9 +20,18 @@ class DatabaseSeeder extends Seeder
                "name" => "Admin",
                "email" => "admin@admin.com",
                "email_verified_at" => $now,
-               "password" => '$12$HPfGTifJrBlAJAJoDuZES.ryRP2WH.pFeqtY8IOIt2jxYkFf.zCr2',
+               "password" => '$2y$12$3qqOBr5tfqe907NIIbsMP.i39.oHMq3RItod94DL6zj3xc6O.4t/G',
                "created_at" => $now,
                "updated_at" => $now,
+               "type" => "admin",
+            ],[
+               "name" => "User",
+               "email" => "user@user.com",
+               "email_verified_at" => $now,
+               "password" => '$2y$12$3qqOBr5tfqe907NIIbsMP.i39.oHMq3RItod94DL6zj3xc6O.4t/G',
+               "created_at" => $now,
+               "updated_at" => $now,
+               "type" => "user",
             ],
         ];
 

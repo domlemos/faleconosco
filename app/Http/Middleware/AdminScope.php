@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckScope
+class AdminScope
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,11 @@ class CheckScope
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //TODO: Teste de middleware
+        if ($request->user()->tokenCan('admin')) {
+            return $next($request);
+        }
 
-        return $next($request);
+        return response(['error' => 'Unauthorized'], 401);
+
     }
 }

@@ -2,14 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\Player;
-use App\Repositories\Interfaces\PlayerRepositoryInterface;
+use App\Exceptions\UserException;
+use App\Repositories\Interfaces\UserRepositoryInterface;
 use Exception;
+use App\Models\User;
 use Illuminate\Support\Collection;
+use App\Models\UserType;
 
-class UserRepository implements PlayerRepositoryInterface
+class UserRepository implements UserRepositoryInterface
 {
-    public function __construct(private Player $model)
+    public function __construct(private User $model)
     {
 
     }
@@ -19,20 +21,28 @@ class UserRepository implements PlayerRepositoryInterface
         return $this->model->all();
     }
 
+    /**
+     * @throws UserException
+     */
     public function create(array $data): void
     {
-        $this->model->create($data);
+        try {
+            $this->model->create($data);
+
+        } catch (Exception $ex) {
+            throw new UserException();
+        }
     }
 
-    public function find($id): Player
+    public function find($id): User
     {
-        $player = $this->model->find($id);
+        $user = $this->model->find($id);
 
-        if(!$player) {
+        if(!$user) {
             throw new Exception('Registro não encontrado', 400);
         }
 
-        return $player;
+        return $user;
     }
 
     public function update($id, $data): bool
@@ -47,5 +57,18 @@ class UserRepository implements PlayerRepositoryInterface
         $player = $this->find($id);
 
         $player->delete();
+    }
+
+    public function getUserTypes(): array
+    {
+         return UserType::getUserTypes();
+    }
+
+    public function generatePassword(): string
+    {
+        $length = 10;
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()';
+
+        return substr(str_shuffle(str_repeat($characters, $length)), 0, $length);
     }
 }
